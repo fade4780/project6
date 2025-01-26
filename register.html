@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Регистрация</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/gamegroovelogo.png" alt="Логотип компании" width="128" height="128">
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">О нас</a></li>
+        <li><a href="products.html">Товар</a></li>
+        <li><a href="contacts.html">Где нас найти?</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="form-container">
+      <h2>Регистрация</h2>
+      <form id="register-form">
+        <label for="phone">Телефон:</label>
+        <input type="tel" id="phone" name="phone" required placeholder="Введите ваш телефон">
+
+        <label for="password">Пароль:</label>
+        <input type="password" id="password" name="password" required placeholder="Введите пароль">
+
+        <label for="confirm-password">Повторите пароль:</label>
+        <input type="password" id="confirm-password" name="confirm-password" required placeholder="Повторите пароль">
+
+        <label for="policy">
+          <input type="checkbox" id="policy" name="policy" required>
+          Согласие с <a href="/policy.pdf" target="_blank">политикой обработки персональных данных</a>
+        </label>
+
+        <button type="submit" class="btn">Зарегистрироваться</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Все права защищены.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
