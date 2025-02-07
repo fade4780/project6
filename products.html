@@ -4,115 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Товары</title>
-    <style>
-        /* Основной стиль */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #333;
-            padding: 10px 20px;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 15px;
-        }
-
-        .navbar .nav-links li a {
-            color: white;
-            text-decoration: none;
-        }
-
-        .navbar .nav-links li a.active {
-            font-weight: bold;
-        }
-
-        /* Слайдер */
-        .slider {
-            width: 80%;
-            margin: 20px auto;
-            position: relative;
-            overflow: hidden; /* Скрыть выходящие за пределы элементы */
-            border: 2px solid #ccc;
-            border-radius: 10px;
-        }
-
-        .slides {
-            display: flex;
-            transition: transform 0.5s ease-in-out; /* Анимация переключения слайдов */
-        }
-
-        .slide {
-            min-width: 100%; /* Каждый слайд занимает всю ширину контейнера */
-            display: none; /* По умолчанию скрыть */
-            flex-shrink: 0;
-        }
-
-        .slide.active {
-            display: block; /* Отображать только активный слайд */
-        }
-
-        .slide img {
-            width: 100%; /* Устанавливает ширину изображения равной ширине контейнера */
-            max-height: 400px; /* Устанавливает максимальную высоту изображения */
-            object-fit: contain; /* Масштабирование изображения без обрезки */
-            border-bottom: 2px solid #ccc;
-            border-radius: 10px 10px 0 0;
-        }
-
-        .description {
-            padding: 10px;
-            text-align: center;
-            background-color: #f9f9f9;
-        }
-
-        .description h2 {
-            margin: 10px 0 5px;
-            font-size: 20px;
-        }
-
-        .description p {
-            margin: 0;
-            font-size: 14px;
-        }
-
-        /* Кнопки управления */
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            border-radius: 50%;
-            font-size: 18px;
-        }
-
-        .prev {
-            left: 10px;
-        }
-
-        .next {
-            right: 10px;
-        }
-
-        .prev:hover, .next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -122,9 +14,13 @@
             </a>
             <ul class="nav-links">
                 <li><a href="about.html">О нас</a></li>
-                <li><a href="products.html" class="active">Товары</a></li>
+                <li><a href="products.html" class="active">Товар</a></li>
                 <li><a href="contact.html">Где нас найти?</a></li>
             </ul>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn">Авторизация</a>
+                <a href="register.html" class="btn">Регистрация</a>
+            </div>
         </nav>
     </header>
     <main>
@@ -132,60 +28,33 @@
         <p>Мы предлагаем широкий ассортимент товаров. Ознакомьтесь с нашими лучшими предложениями.</p>
 
         <!-- Слайдер -->
-        <div class="slider">
-            <div class="slides">
-                <!-- Карточка 1 -->
-                <div class="slide active">
-                    <img src="images/testproject1.jpg" alt="Товар 1">
-                    <div class="description">
-                        <h2>Товар 1</h2>
-                        <p>Описание товара: Уникальный продукт, созданный для вас.</p>
-                    </div>
+        <div class="blockSlider" id="blockSlider">
+            <div class="FullArea">
+                <div class="imagesArea">
+                    <img class="imageSlider" src="images/testproject1.jpg" alt="">
+                    <img class="imageSlider" src="images/testproject2.jpg" alt="">
+                    <img class="imageSlider" src="images/testproject3.jpg" alt="">
+                    <img class="imageSlider" src="images/testproject4.jpg" alt="">
                 </div>
-                <!-- Карточка 2 -->
-                <div class="slide">
-                    <img src="images/testproject2.jpg" alt="Товар 2">
-                    <div class="description">
-                        <h2>Товар 2</h2>
-                        <p>Описание товара: Высокое качество и доступная цена.</p>
-                    </div>
+    
+                <div class="pointsAreaSize">
+                    <span class="point"></span>
+                    <span class="point"></span>
+                    <span class="point"></span>
+                    <span class="point"></span>
                 </div>
-                <!-- Карточка 3 -->
-                <div class="slide">
-                    <img src="images/testproject3.jpg" alt="Товар 3">
-                    <div class="description">
-                        <h2>Товар 3</h2>
-                        <p>Описание товара: Идеальный выбор для повседневного использования.</p>
-                    </div>
+    
+                <div class="btnsAreaSize">
+                    <div class="blockArrow" id="leftBtn"><i class="fa fa-angle-left" aria-hidden="true"></i></div>
+                    <div class="blockArrow" id="rightBtn"><i class="fa fa-angle-right" aria-hidden="true"></i></div>
                 </div>
             </div>
-            <!-- Кнопки для управления -->
-            <button class="prev" onclick="prevSlide()">&#10094;</button>
-            <button class="next" onclick="nextSlide()">&#10095;</button>
+    
         </div>
+        <script src="script.js"></script>
     </main>
     <footer>
         <p>&copy; 2024 Все права защищены.</p>
     </footer>
-
-    <script>
-        // Переменные
-        const slides = document.querySelectorAll('.slide');
-        let currentSlide = 0;
-
-        // Функция переключения на следующий слайд
-        function nextSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length; // Возвращаемся к первому слайду, если дошли до конца
-            slides[currentSlide].classList.add('active');
-        }
-
-        // Функция переключения на предыдущий слайд
-        function prevSlide() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length; // Возвращаемся к последнему слайду, если дошли до начала
-            slides[currentSlide].classList.add('active');
-        }
-    </script>
 </body>
 </html>
